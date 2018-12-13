@@ -35,14 +35,19 @@ public class EnabledLoggingBenchmark {
     }
 
     @Benchmark
-    public void benchmarkPlaceHolders(ExecutionPlan plan) {
-        ExampleLogging.logWithPlaceHolders(plan.getPojo());
-    }
-    @Benchmark
     public void benchmarkPlaceHoldersNoExt(ExecutionPlan plan) {
         ExampleLogging.logWithPlaceHoldersNoExt(plan.getPojo());
     }
 
+    @Benchmark
+    public void benchmarkPlaceHolders(ExecutionPlan plan) {
+        ExampleLogging.logWithPlaceHolders(plan.getPojo());
+    }
+
+    @Benchmark
+    public void benchmarkPlaceHolderToString(ExecutionPlan plan) {
+        ExampleLogging.logWithPlaceHolderToString(plan.getPojo());
+    }
     @Benchmark
     public void benchmarkStringCat(ExecutionPlan plan) {
         ExampleLogging.logWithStringCat(plan.getPojo());
@@ -51,10 +56,5 @@ public class EnabledLoggingBenchmark {
     @Benchmark
     public void benchmarkStringCatToString(ExecutionPlan plan) {
         ExampleLogging.logWithStringCatToString(plan.getPojo());
-    }
-
-    @Benchmark
-    public void benchmarkPlaceHolderToString(ExecutionPlan plan) {
-        ExampleLogging.logWithPlaceHolderToString(plan.getPojo());
     }
 }
