@@ -39,7 +39,7 @@ public class ExampleLogging {
 ```
 ## The Performance
 
-### With loglevel disabled
+### With loglevel disabled with Logback
 
 |         **Method**           | **Time**  |
 |------------------------------|----------:|
@@ -50,15 +50,38 @@ public class ExampleLogging {
 | `logWithStringCatToString`   |     335ns |
 | `toString`                   |     280ns |
 
-Cannot explain logWithPlaceHolderToString. Would have expected in same range as `logWithStringCatToString` 
-### With loglevel enabled
+Other loggers provide similar performance when logging is disabled.
 
-|          **Method**          |  **Time**    |
-|------------------------------|-------------:|
-| `logWithPlaceHoldersNoExt`   |    3&micro;s |
-| `logWithPlaceHolders`        |    3&micro;s |
-| `logWithPlaceHolderToString` |    3&micro;s |
-| `logWithStringCat`           | 2.83&micro;s |
-| `logWithStringCatToString`   | 2.83&micro;s |
+**_Cannot explain logWithPlaceHolderToString. Would have expected in same range as_** `logWithStringCatToString` 
 
+### With loglevel enabled with Logback
+
+|          **Method**          |  **Time**   |
+|------------------------------|------------:|
+| `logWithPlaceHoldersNoExt`   |   3&micro;s |
+| `logWithPlaceHolders`        |   3&micro;s |
+| `logWithPlaceHolderToString` |   3&micro;s |
+| `logWithStringCat`           | 2.8&micro;s |
+| `logWithStringCatToString`   | 2.8&micro;s |
+
+### With loglevel enabled with Log4J
+
+|          **Method**          |  **Time**   |
+|------------------------------|------------:|
+| `logWithPlaceHoldersNoExt`   |   3&micro;s |
+| `logWithPlaceHolders`        | 7.8&micro;s |
+| `logWithPlaceHolderToString` |   8&micro;s |
+| `logWithStringCat`           | 9.5&micro;s |
+| `logWithStringCatToString`   |  10&micro;s |
+
+
+### With loglevel enabled with JUL
+
+|          **Method**          |  **Time**   |
+|------------------------------|------------:|
+| `logWithPlaceHoldersNoExt`   | 2.5&micro;s |
+| `logWithPlaceHolders`        | 7.8&micro;s |
+| `logWithPlaceHolderToString` | 7.8&micro;s |
+| `logWithStringCat`           |   8&micro;s |
+| `logWithStringCatToString`   | 7.7&micro;s |
 
