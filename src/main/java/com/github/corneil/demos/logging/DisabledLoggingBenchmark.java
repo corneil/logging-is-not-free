@@ -29,7 +29,7 @@ public class DisabledLoggingBenchmark {
     }
 
     @Benchmark
-    public void benchmarkToString(EnabledLoggingBenchmark.ExecutionPlan plan, Blackhole blackhole) {
+    public void benchmarkAToString(ExecutionPlan plan, Blackhole blackhole) {
         blackhole.consume(plan.getPojo().toString());
     }
 
@@ -37,6 +37,11 @@ public class DisabledLoggingBenchmark {
     @Benchmark
     public void benchmarkPlaceHolders(ExecutionPlan plan) {
         ExampleLogging.logWithPlaceHolders(plan.getPojo());
+    }
+
+    @Benchmark
+    public void benchmarkPlaceHoldersNoExtCheck(ExecutionPlan plan) {
+        ExampleLogging.logWithPlaceHoldersNoExtCheck(plan.getPojo());
     }
 
     @Benchmark
@@ -55,7 +60,22 @@ public class DisabledLoggingBenchmark {
     }
 
     @Benchmark
-    public void benchmarkPlaceHolderToString(EnabledLoggingBenchmark.ExecutionPlan plan) {
+    public void benchmarkPlaceHolderToString(ExecutionPlan plan) {
         ExampleLogging.logWithPlaceHolderToString(plan.getPojo());
+    }
+
+    @Benchmark
+    public void benchmarkKLogging(ExecutionPlan plan) {
+        KExampleLogging.logWithPlaceHoldersNoExtInterpolation(plan.getPojo());
+    }
+
+    @Benchmark
+    public void benchmarkKLoggingCheck(ExecutionPlan plan) {
+        KExampleLogging.logWithPlaceHoldersNoExtInterpolationCheck(plan.getPojo());
+    }
+
+    @Benchmark
+    public void benchmarkKLoggingExt(ExecutionPlan plan) {
+        KExampleLogging.logWithPlaceHoldersExtInterpolation(plan.getPojo());
     }
 }

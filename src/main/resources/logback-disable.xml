@@ -1,11 +1,21 @@
 <configuration>
 	<appender name="FILE" class="ch.qos.logback.core.FileAppender">
-		<file>/tmp/logback-disabled.log</file>
+		<file>/tmp/bench-logback-disabled.log</file>
 		<encoder>
 			<pattern>%d{HH:mm:ss.SSS} %-5level %logger{24} - %msg%n</pattern>
 		</encoder>
 	</appender>
-	<root level="ERROR">
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>OFF</level>
+		</filter>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} %-5level %logger{24} - %msg%n</pattern>
+		</encoder>
+	</appender>
+	<logger name="com.github.corneil.demos.logging" level="OFF"/>
+	<root level="OFF">
 		<appender-ref ref="FILE"/>
+		<appender-ref ref="STDOUT"/>
 	</root>
 </configuration>

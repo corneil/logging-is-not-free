@@ -8,11 +8,18 @@ public class ExampleLogging {
 
     public static void logWithPlaceHolders(SimplePOJO pojo) {
         LOGGER.entry(pojo);
-        LOGGER.info("logWithPlaceHolders:{}", pojo);
+        LOGGER.info("logWithPlaceHoldersNoExt:{}", pojo);
         LOGGER.exit();
     }
+
     public static void logWithPlaceHoldersNoExt(SimplePOJO pojo) {
-        LOGGER.info("logWithPlaceHolders:{}", pojo);
+        LOGGER.info("logWithPlaceHoldersNoExt:{}", pojo);
+    }
+
+    public static void logWithPlaceHoldersNoExtCheck(SimplePOJO pojo) {
+        if (LOGGER.isInfoEnabled()) {
+            LOGGER.info("logWithPlaceHoldersNoExt:{}", pojo);
+        }
     }
 
     public static void logWithStringCat(SimplePOJO pojo) {

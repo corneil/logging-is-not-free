@@ -10,8 +10,11 @@ public class LoggingBenchmarkRunner {
     public static void main(String[] args) throws Exception {
         Options options = new OptionsBuilder()
                 .forks(1)
-                .warmupTime(TimeValue.seconds(5))
-                .measurementTime(TimeValue.seconds(10))
+                .threads(1)
+                .warmupTime(TimeValue.seconds(1))
+                .warmupIterations(3)
+                .measurementTime(TimeValue.seconds(2))
+                .measurementIterations(5)
                 .resultFormat(ResultFormatType.CSV)
                 .detectJvmArgs()
                 .build();

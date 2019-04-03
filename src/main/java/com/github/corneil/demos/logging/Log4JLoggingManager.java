@@ -1,5 +1,6 @@
 package com.github.corneil.demos.logging;
 
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
@@ -9,7 +10,9 @@ public class Log4JLoggingManager implements LoggingManager {
         try {
             final Logger rootLogger = Logger.getRootLogger();
             rootLogger.getLoggerRepository().resetConfiguration();
+            rootLogger.setLevel(Level.ALL);
             PropertyConfigurator.configure(ClassLoader.getSystemResourceAsStream("log4j.properties"));
+            System.out.println("Log4JLoggingManager:enable");
         } catch (Throwable x) {
             System.err.println("Cannot configure log4j:" + x);
         }
@@ -21,6 +24,8 @@ public class Log4JLoggingManager implements LoggingManager {
             final Logger rootLogger = Logger.getRootLogger();
             rootLogger.getLoggerRepository().resetConfiguration();
             PropertyConfigurator.configure(ClassLoader.getSystemResourceAsStream("log4j-disable.properties"));
+            rootLogger.setLevel(Level.OFF);
+            System.out.println("Log4JLoggingManager:disable");
         } catch (Throwable x) {
             System.err.println("Cannot configure log4j:" + x);
         }
