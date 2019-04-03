@@ -30,13 +30,18 @@ public class EnabledLoggingBenchmark {
     }
 
     @Benchmark
-    public void benchmarkToString(ExecutionPlan plan, Blackhole blackhole) {
+    public void benchmarkAToString(ExecutionPlan plan, Blackhole blackhole) {
         blackhole.consume(plan.getPojo().toString());
     }
 
     @Benchmark
     public void benchmarkPlaceHoldersNoExt(ExecutionPlan plan) {
         ExampleLogging.logWithPlaceHoldersNoExt(plan.getPojo());
+    }
+
+    @Benchmark
+    public void benchmarkPlaceHoldersNoExtCheck(DisabledLoggingBenchmark.ExecutionPlan plan) {
+        ExampleLogging.logWithPlaceHoldersNoExtCheck(plan.getPojo());
     }
 
     @Benchmark
@@ -48,6 +53,7 @@ public class EnabledLoggingBenchmark {
     public void benchmarkPlaceHolderToString(ExecutionPlan plan) {
         ExampleLogging.logWithPlaceHolderToString(plan.getPojo());
     }
+
     @Benchmark
     public void benchmarkStringCat(ExecutionPlan plan) {
         ExampleLogging.logWithStringCat(plan.getPojo());
@@ -56,5 +62,20 @@ public class EnabledLoggingBenchmark {
     @Benchmark
     public void benchmarkStringCatToString(ExecutionPlan plan) {
         ExampleLogging.logWithStringCatToString(plan.getPojo());
+    }
+
+    @Benchmark
+    public void benchmarkKLogging(ExecutionPlan plan) {
+        KExampleLogging.logWithPlaceHoldersNoExtInterpolation(plan.getPojo());
+    }
+
+    @Benchmark
+    public void benchmarkKLoggingCheck(ExecutionPlan plan) {
+        KExampleLogging.logWithPlaceHoldersNoExtInterpolationCheck(plan.getPojo());
+    }
+
+    @Benchmark
+    public void benchmarkKLoggingExt(ExecutionPlan plan) {
+        KExampleLogging.logWithPlaceHoldersExtInterpolation(plan.getPojo());
     }
 }
