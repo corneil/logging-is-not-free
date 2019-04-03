@@ -69,16 +69,16 @@ class KExampleLogging {
 
 ### With loglevel disabled with Logback
 
-|         **Method**           | **Time**  |
-|------------------------------|----------:|
-| `KLogging`                   |     2.1ns |
-| `logWithPlaceHoldersNoExt`   |     1.9ns |
-| `logWithPlaceHoldersNoExtChk |     2.0ns |
-| `logWithPlaceHolders`        |     4.4ns |
-| `logWithPlaceHolderToString` |   320.0ns |
-| `logWithStringCat`           |   397.0ns |
-| `logWithStringCatToString`   |   388.0ns |
-| `toString`                   |   319.0ns |
+|         **Method**            | **Time**  |
+|-------------------------------|----------:|
+| `KLogging`                    |     2.1ns |
+| `logWithPlaceHoldersNoExt`    |     1.9ns |
+| `logWithPlaceHoldersNoExtChk` |     2.0ns |
+| `logWithPlaceHolders`         |     4.4ns |
+| `logWithPlaceHolderToString`  |   320.0ns |
+| `logWithStringCat`            |   397.0ns |
+| `logWithStringCatToString`    |   388.0ns |
+| `toString`                    |   319.0ns |
 
 Other loggers provide similar performance when logging is disabled.
 
