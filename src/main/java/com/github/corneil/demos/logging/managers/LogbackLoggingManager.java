@@ -1,6 +1,5 @@
-package com.github.corneil.demos.logging;
+package com.github.corneil.demos.logging.managers;
 
-import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.LoggerContext;
 import ch.qos.logback.classic.joran.JoranConfigurator;
 import org.slf4j.LoggerFactory;

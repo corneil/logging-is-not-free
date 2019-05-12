@@ -1,5 +1,7 @@
-package com.github.corneil.demos.logging;
+package com.github.corneil.demos.logging.jmh;
 
+import com.github.corneil.demos.logging.LoggingUtil;
+import com.github.corneil.demos.logging.SimplePOJO;
 import org.openjdk.jmh.infra.Blackhole;
 
 import java.util.Date;

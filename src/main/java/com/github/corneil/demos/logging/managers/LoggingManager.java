@@ -1,4 +1,4 @@
-package com.github.corneil.demos.logging;
+package com.github.corneil.demos.logging.managers;
 
 import java.io.IOException;
 

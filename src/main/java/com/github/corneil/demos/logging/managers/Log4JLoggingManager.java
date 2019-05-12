@@ -1,4 +1,4 @@
-package com.github.corneil.demos.logging;
+package com.github.corneil.demos.logging.managers;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;

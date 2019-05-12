@@ -13,6 +13,8 @@ public class LoggingTest {
         ExampleLogging.logWithPlaceHolders(pojo);
         ExampleLogging.logWithStringCat(pojo);
         ExampleLogging.logWithStringCatToString(pojo);
+        ExampleLogging.logFluentWithParam(pojo);
+        ExampleLogging.logFluentWithLazy(pojo);
     }
 
     @Test
@@ -23,5 +25,7 @@ public class LoggingTest {
         ExampleLogging.logWithPlaceHolders(pojo);
         ExampleLogging.logWithStringCat(pojo);
         ExampleLogging.logWithStringCatToString(pojo);
+        ExampleLogging.logFluentWithParam(pojo);
+        ExampleLogging.logFluentWithLazy(pojo);
     }
 }

@@ -4,7 +4,7 @@ import mu.KotlinLogging
 
 class KExampleLogging {
     companion object {
-        val logger = KotlinLogging.logger {}
+        private val logger = KotlinLogging.logger {}
 
         @JvmStatic
         fun logWithPlaceHoldersNoExtInterpolation(pojo: SimplePOJO) {

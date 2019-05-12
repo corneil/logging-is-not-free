@@ -1,5 +1,7 @@
-package com.github.corneil.demos.logging;
+package com.github.corneil.demos.logging.jmh;
 
+import com.github.corneil.demos.logging.ExampleLogging;
+import com.github.corneil.demos.logging.KExampleLogging;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Level;
@@ -37,6 +39,14 @@ public class EnabledLoggingBenchmark {
     @Benchmark
     public void benchmarkPlaceHoldersNoExt(ExecutionPlan plan) {
         ExampleLogging.logWithPlaceHoldersNoExt(plan.getPojo());
+    }
+    @Benchmark
+    public void benchmarkFluentWithParam(ExecutionPlan plan) {
+        ExampleLogging.logFluentWithParam(plan.getPojo());
+    }
+    @Benchmark
+    public void benchmarkFluentWithLazy(EnabledLoggingBenchmark.ExecutionPlan plan) {
+        ExampleLogging.logFluentWithLazy(plan.getPojo());
     }
 
     @Benchmark
