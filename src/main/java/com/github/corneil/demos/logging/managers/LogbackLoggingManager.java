@@ -13,7 +13,7 @@ public class LogbackLoggingManager implements LoggingManager {
             configurator.setContext(lc);
             lc.reset();
             configurator.doConfigure(ClassLoader.getSystemResourceAsStream("logback.xml"));
-            System.out.println("Log4JLoggingManagerLogbackLoggingManager:enable");
+            System.out.println("LogbackLoggingManager:enable");
         } catch (Throwable x) {
             System.err.println("Cannot configure logback:" + x);
         }
@@ -27,7 +27,7 @@ public class LogbackLoggingManager implements LoggingManager {
             configurator.setContext(lc);
             lc.reset();
             configurator.doConfigure(ClassLoader.getSystemResourceAsStream("logback-disable.xml"));
-            System.out.println("Log4JLoggingManagerLogbackLoggingManager:disable");
+            System.out.println("LogbackLoggingManager:disable");
         } catch (Throwable x) {
             System.err.println("Cannot configure logback:" + x);
         }

@@ -8,7 +8,7 @@ import static com.google.common.flogger.LazyArgs.lazy;
 
 
 public class ExampleLogging {
-    public static final XLogger LOGGER = XLoggerFactory.getXLogger(ExampleLogging.class);
+    private static final XLogger LOGGER = XLoggerFactory.getXLogger(ExampleLogging.class);
     private static final FluentLogger logger = FluentLogger.forEnclosingClass();
 
     public static void logWithPlaceHolders(final SimplePOJO pojo) {
@@ -16,7 +16,9 @@ public class ExampleLogging {
         LOGGER.info("logWithPlaceHoldersNoExt:{}", pojo);
         LOGGER.exit();
     }
-
+    public static void logBlank(final SimplePOJO pojo) {
+        // do nothing
+    }
     public static void logWithPlaceHoldersNoExt(final SimplePOJO pojo) {
         LOGGER.info("logWithPlaceHoldersNoExt:{}", pojo);
     }

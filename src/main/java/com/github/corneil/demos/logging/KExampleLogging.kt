@@ -24,5 +24,9 @@ class KExampleLogging {
             logger.info { "logWithPlaceHoldersExtInterpolation:$pojo" }
             logger.exit()
         }
+        @JvmStatic
+        fun logBlank(pojo: SimplePOJO) {
+            // do nothing
+        }
     }
 }

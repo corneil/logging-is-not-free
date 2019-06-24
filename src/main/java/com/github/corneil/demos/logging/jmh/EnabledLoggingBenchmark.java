@@ -40,8 +40,13 @@ public class EnabledLoggingBenchmark {
     }
 
     @Benchmark
-    public void benchmarkFluentWithLazy(EnabledLoggingBenchmark.ExecutionPlan plan) {
+    public void benchmarkFluentWithLazy(ExecutionPlan plan) {
         ExampleLogging.logFluentWithLazy(plan.getPojo());
+    }
+
+    @Benchmark
+    public void benchmarkJavaBlank(ExecutionPlan plan) {
+        ExampleLogging.logBlank(plan.getPojo());
     }
 
     @Benchmark
@@ -83,4 +88,10 @@ public class EnabledLoggingBenchmark {
     public void benchmarkKLoggingExt(ExecutionPlan plan) {
         KExampleLogging.logWithPlaceHoldersExtInterpolation(plan.getPojo());
     }
+
+    @Benchmark
+    public void benchmarkKotlinBlank(ExecutionPlan plan) {
+        KExampleLogging.logBlank(plan.getPojo());
+    }
+
 }

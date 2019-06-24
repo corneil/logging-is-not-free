@@ -8,7 +8,8 @@ public class LoggingUtil {
     public static void disable() {
         for (String cls : Arrays.asList("com.github.corneil.demos.logging.managers.Log4JLoggingManager",
                 "com.github.corneil.demos.logging.managers.JULLoggingManager",
-                "com.github.corneil.demos.logging.managers.LogbackLoggingManager")) {
+                "com.github.corneil.demos.logging.managers.LogbackLoggingManager",
+                "com.github.corneil.demos.logging.managers.FluentLoggingManager")) {
             try {
                 LoggingManager manager = (LoggingManager) Class.forName(cls).newInstance();
                 manager.disable();
@@ -21,7 +22,8 @@ public class LoggingUtil {
     public static void enable() {
         for (String cls : Arrays.asList("com.github.corneil.demos.logging.managers.Log4JLoggingManager",
                 "com.github.corneil.demos.logging.managers.JULLoggingManager",
-                "com.github.corneil.demos.logging.managers.LogbackLoggingManager")) {
+                "com.github.corneil.demos.logging.managers.LogbackLoggingManager",
+                "com.github.corneil.demos.logging.managers.FluentLoggingManager")) {
             try {
                 LoggingManager manager = (LoggingManager) Class.forName(cls).newInstance();
                 manager.enable();
