@@ -2,14 +2,7 @@ package com.github.corneil.demos.logging.jmh;
 
 import com.github.corneil.demos.logging.ExampleLogging;
 import com.github.corneil.demos.logging.KExampleLogging;
-import org.openjdk.jmh.annotations.Benchmark;
-import org.openjdk.jmh.annotations.BenchmarkMode;
-import org.openjdk.jmh.annotations.Level;
-import org.openjdk.jmh.annotations.Mode;
-import org.openjdk.jmh.annotations.OutputTimeUnit;
-import org.openjdk.jmh.annotations.Scope;
-import org.openjdk.jmh.annotations.Setup;
-import org.openjdk.jmh.annotations.State;
+import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
 
 import java.util.concurrent.TimeUnit;
@@ -40,10 +33,12 @@ public class EnabledLoggingBenchmark {
     public void benchmarkPlaceHoldersNoExt(ExecutionPlan plan) {
         ExampleLogging.logWithPlaceHoldersNoExt(plan.getPojo());
     }
+
     @Benchmark
     public void benchmarkFluentWithParam(ExecutionPlan plan) {
         ExampleLogging.logFluentWithParam(plan.getPojo());
     }
+
     @Benchmark
     public void benchmarkFluentWithLazy(EnabledLoggingBenchmark.ExecutionPlan plan) {
         ExampleLogging.logFluentWithLazy(plan.getPojo());
